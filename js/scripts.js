@@ -5,8 +5,15 @@ var pigLatinTranslator = function(sentence) {
     return (sentence + "way");
   } else {
     var sentenceArr = sentence.split('');
-    sentenceArr.push(sentenceArr[0]);
-    sentenceArr.shift();
+    for (i = 0; i < sentenceArr.length; i++) {
+      if (!(vowels.includes(sentenceArr[0]))) {
+        sentenceArr.push(sentenceArr[0]);
+        sentenceArr.shift();
+      } else {
+        break;
+      }
+    }
+
     sentence = sentenceArr.join('') + "ay";
     return sentence;
   }
