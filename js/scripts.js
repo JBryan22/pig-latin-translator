@@ -1,6 +1,9 @@
 var vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
 
 var pigLatinTranslatorWord = function(word) {
+  if (!/[a-zA-Z]/.test(word)) {
+    return word;
+  }
   if (vowels.includes(word.charAt(0))) {
     return (word + "way");
   } else {
