@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
+    <meta charset="utf-8">
+    <title>Pig Latin</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h1> Pig Latin Converter</h1>
+      </div>
+      <form id="pigLatin">
+        <div class="form-group">
+          <label for="pig">Please Enter a sentence to be translated in Pig Latin.</label>
+          <input id="pig" type="text" class="form-control">
+        </div>
+        <button type="submit" class="btn">Translation</button>
+      </form>
+      <div class="output">
+      </div>
+    </div>
+  </body>
+</html>
+
+
+<!-- LIST OF SPECS
+
+  1. The program does nothing to non-alphabetical characters, since they do not contain consonants or vowels.
+
+  2. The program adds "way" to single-letter words beginning with a vowel.
+
+  3. The program adds "way" to multi-letter words beginning with a vowel.
+
+  4. The program adds "way" to multi-word sentences where the words begin with a vowel.
+
+  5. If a word starts with a consonant, it moves the first consonant to the end of the word and adds "ay"
+
+  6. If a word starts with a consonant, it moves all consecutive consonants to the end of the word and adds "ay"
+
+  7. The program implements rule 6, but for multiple words in a sentence.
+
+  8. For words beginning with "y", treat "y" as a consonant.
+
+  9. If the word begins with "qu", move the "u" along with the "q".
+
+  10. If the word contains "qu" in the first consecutive consonants, but does not begin with "qu", move the "u" along with the "a".
+
+-->
