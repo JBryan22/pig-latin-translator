@@ -7,6 +7,13 @@ var pigLatinTranslatorWord = function(word) {
     var wordArr = word.split('');
     for (i = 0; i < wordArr.length; i++) {
       if (!(vowels.includes(wordArr[0]))) {
+        if (wordArr[0].toLowerCase() === 'q' && wordArr[1].toLowerCase() === 'u') {
+          wordArr.push(wordArr[0]);
+          wordArr.shift();
+          wordArr.push(wordArr[0]);
+          wordArr.shift();
+          break;
+        }
         wordArr.push(wordArr[0]);
         wordArr.shift();
       } else {
