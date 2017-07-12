@@ -1,22 +1,30 @@
 var vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
 
-var pigLatinTranslator = function(sentence) {
-  if (vowels.includes(sentence.charAt(0))) {
-    return (sentence + "way");
+var pigLatinTranslatorWord = function(word) {
+  if (vowels.includes(word.charAt(0))) {
+    return (word + "way");
   } else {
-    var sentenceArr = sentence.split('');
-    for (i = 0; i < sentenceArr.length; i++) {
-      if (!(vowels.includes(sentenceArr[0]))) {
-        sentenceArr.push(sentenceArr[0]);
-        sentenceArr.shift();
+    var wordArr = word.split('');
+    for (i = 0; i < wordArr.length; i++) {
+      if (!(vowels.includes(wordArr[0]))) {
+        wordArr.push(wordArr[0]);
+        wordArr.shift();
       } else {
         break;
       }
     }
-
-    sentence = sentenceArr.join('') + "ay";
-    return sentence;
+    word = wordArr.join('') + "ay";
+    return word;
   }
+}
+
+var pigLatinTranslatorSentence = function(sentence) {
+  var sentenceArr = sentence.split(' ');
+  var translatedArr = [];
+  sentenceArr.forEach(function(word){
+    translatedArr.push(pigLatinTranslatorWord(word));
+  });
+  return translatedArr.join(' ');
 }
 
 
@@ -25,7 +33,7 @@ $(function() {
   $("#pigLatin").submit(function(event) {
     event.preventDefault();
     var english = $("#pig").val();
-    var translated = pigLatinTranslator(english);
+    var translated = pigLatinTranslatorSentence(english);
     $(".output").text(translated);
   });
 });
